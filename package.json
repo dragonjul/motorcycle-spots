@@ -7,7 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "core-js": "^3.8.3",
+    "mapbox-gl": "^2.8.2",
+    "proj4": "^2.8.0",
     "vue": "^3.2.13"
   },
   "devDependencies": {
