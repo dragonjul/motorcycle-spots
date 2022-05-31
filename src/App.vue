@@ -15,6 +15,11 @@ export default {
     Header,
     BaseMap,
   },
+  data(){
+    return {
+      
+    }
+  }
 };
 </script>
 

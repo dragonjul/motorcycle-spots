@@ -1,0 +1,12 @@
+{
+  "name": "Motorcycle Parking",
+  "Placemark": [
+    {
+      "name": "Lawson Village Public Car Park - 4-6 New St, Lawson",
+      "description": "4 spaces",
+      "Point": {
+        "coordinates": "150.4294489,-33.7203939,0"
+      }
+    }
+  ]
+}
