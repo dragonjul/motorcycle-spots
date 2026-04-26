@@ -25,7 +25,15 @@ export default {
   },
 
   mounted() {
-    mapboxgl.accessToken = this.accessToken;
+  const originalFetch = window.fetch;
+  window.fetch = function(url, ...args) {
+    if (typeof url === 'string' && url.includes('events.mapbox.com')) {
+      return Promise.resolve(new Response('{}', { status: 200 }));
+    }
+    return originalFetch.apply(this, [url, ...args]);
+  };
+
+  mapboxgl.accessToken = this.accessToken;
 
     //add map
     const map = new mapboxgl.Map({
