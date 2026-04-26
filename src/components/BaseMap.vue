@@ -20,9 +20,7 @@ export default {
 
   data() {
     return {
-      accessToken:
-        process.env.VUE_APP_MAPBOX_TOKEN,
-,
+      accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
     };
   },
 
