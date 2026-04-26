@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       accessToken:
-        "pk.eyJ1IjoiZHJhZ29uanVsIiwiYSI6ImNsM285aWx6bzBtOHIzZ211MnI1d29jNHYifQ.0ov9ua9NtfbUGYsqSMaUbw",
+        process.env.VUE_APP_MAPBOX_TOKEN,
+,
     };
   },
 
@@ -56,6 +57,8 @@ export default {
       new mapboxgl.GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true,
+          timeout: 6000,
+          maximumAge:0
         },
         // When active, receive updates to the device's location as it changes.
         trackUserLocation: true,
