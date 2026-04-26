@@ -54,8 +54,8 @@ export default {
     map.addControl(
       new mapboxgl.GeolocateControl({
         positionOptions: {
-          enableHighAccuracy: true,
-          timeout: 6000,
+          enableHighAccuracy: false,
+          timeout: 10000,
           maximumAge:0
         },
         // When active, receive updates to the device's location as it changes.
