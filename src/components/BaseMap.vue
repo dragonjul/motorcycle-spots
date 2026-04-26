@@ -51,20 +51,21 @@ export default {
     map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
 
     // add geolocate control
-    map.addControl(
-      new mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: false,
-          timeout: 10000,
-          maximumAge:0
-        },
-        // When active, receive updates to the device's location as it changes.
-        trackUserLocation: true,
-        // Draws an arrow next to the location dot to indicate which direction the device is heading.
-        showUserHeading: true,
-      }),
-      "bottom-right"
-    );
+   const geolocate = new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: false,
+    timeout: 10000,
+    maximumAge: 0,
+  },
+  trackUserLocation: true,
+  showUserHeading: true,
+});
+
+map.addControl(geolocate, "bottom-right");
+
+geolocate.on("error", (e) => {
+  console.error("GeolocateControl error:", e.code, e.message);
+});
 
     ///////////////////////////////////////
     //add marker and popup with info
